@@ -1,23 +1,10 @@
-##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql2',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
-#   }
-#
+creds = YAML.load_file('config/database.yml')
+
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'postgresql',
   :database  => 'seek_r_development',
-  :username  => 'damilolaodelola',
-  :password  => '',
+  :username  => creds[:username],
+  :password  => creds[:password],
   :host      => 'localhost',
   :port      => 5432
 
@@ -26,8 +13,8 @@ ActiveRecord::Base.configurations[:development] = {
 ActiveRecord::Base.configurations[:production] = {
   :adapter   => 'postgresql',
   :database  => 'seek_r_production',
-  :username  => 'damilolaodelola',
-  :password  => '',
+  :username  => creds[:username],
+  :password  => creds[:password],
   :host      => 'localhost',
   :port      => 5432
 
@@ -36,8 +23,8 @@ ActiveRecord::Base.configurations[:production] = {
 ActiveRecord::Base.configurations[:test] = {
   :adapter   => 'postgresql',
   :database  => 'seek_r_test',
-  :username  => 'damilolaodelola',
-  :password  => '',
+  :username  => creds[:username],
+  :password  => creds[:password],
   :host      => 'localhost',
   :port      => 5432
 
@@ -73,3 +60,4 @@ ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[Padrin
 
 # Timestamps are in the utc by default.
 ActiveRecord::Base.default_timezone = :utc
+
