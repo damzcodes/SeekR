@@ -2,7 +2,7 @@ SeekR::App.controllers :missing_person do
 
   get :new do
     @person = MissingPerson.new
-    @person.images.build
+    3.times { @person.images.build }
     render :"missing_person/new"
   end
 
