@@ -1,9 +1,7 @@
 ---
-:orm: none
+:orm: activerecord
 :test: none
-:mock: none
-:script: none
-:renderer: slim
+:mock: mocha
+:script: jquery
+:renderer: erb
 :stylesheet: none
-:namespace: SeekR
-:migration_format: number
