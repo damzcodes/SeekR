@@ -1,4 +1,6 @@
 class MissingPerson < ActiveRecord::Base
+  belongs_to :organisation
+  has_many :images
 
-belongs_to :organisation
+  accepts_nested_attributes_for :images
 end

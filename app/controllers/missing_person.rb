@@ -1,23 +1,20 @@
 SeekR::App.controllers :missing_person do
-  
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
 
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+  get :new do
+    @person = MissingPerson.new
+    @person.images.build
+    render :"missing_person/new"
+  end
 
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
-  
+  post :create do
+    @person = MissingPerson.new(params[:missing_person])
+    if @person.save
+      # TODO - where should this really go?
+      flash[:notice] = "Write me some copy!"
+      redirect '/'
+    else
+      # TODO - Failed validation stuff
+    end
+  end
 
 end

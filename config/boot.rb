@@ -37,6 +37,7 @@ CarrierWave.root = File.join(Padrino.root, "public")
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+  require './app/uploaders/image_uploader'
 end
 
 ##

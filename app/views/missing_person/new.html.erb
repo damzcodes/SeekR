@@ -1,0 +1,14 @@
+<h3>Report A Missing Person</h3>
+
+<p>Please tell us about your missing person and we will endeavour to find them ASAP</p>
+
+<% form_for @person, url_for(:missing_person, :create), :multipart => true do |f| %>
+  <% f.fields_for :images do |ia| %>
+    <% field_set_tag do %>
+      <%= ia.label :image %>
+      <%= ia.file_field :image %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit :Save %>
+<% end %>
