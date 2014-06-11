@@ -5,6 +5,7 @@ gem 'pg'
 gem 'mocha', :group => 'test', :require => false
 gem 'padrino', '0.12.1'
 gem 'carrierwave', :require => %w(carrierwave carrierwave/orm/activerecord)
+gem 'mini_magick'
 
 group :development, :test do
 	gem 'pry'
@@ -12,4 +13,5 @@ group :development, :test do
 	gem 'capybara'
 	gem 'rspec'
 	gem 'launchy'
+  gem 'database_cleaner'
 end
