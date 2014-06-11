@@ -7,5 +7,6 @@ gem 'padrino', '0.12.1'
 group :development, :test do
 	gem 'pry'
 	gem 'cucumber'
+	gem 'capybara'
 	gem 'rspec'
 end
