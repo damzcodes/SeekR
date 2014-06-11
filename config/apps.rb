@@ -27,7 +27,7 @@
 #
 Padrino.configure_apps do
   # enable :sessions
-  set :session_secret, 'aa4424d323302427d1cec6ed1f52d5d959cebce149d757dc2fe4f4f244eeca36'
+  set :session_secret, '0975d4c1ebca63e91bed9e5aef121f1899339cc8d6d2f798eb41f2ba4c14bcfa'
   set :protection, :except => :path_traversal
   set :protect_from_csrf, true
 end
