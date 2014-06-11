@@ -1,4 +1,4 @@
-SeekR::App.controllers :user do
+SeekR::App.controllers :organisation do
   
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
