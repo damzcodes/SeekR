@@ -1,5 +1,6 @@
 module SeekR
   class App < Padrino::Application
+    use ActiveRecord::ConnectionAdapters::ConnectionManagement
     register Padrino::Mailer
     register Padrino::Helpers
 
