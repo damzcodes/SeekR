@@ -17,6 +17,11 @@ ActiveRecord::Schema.define(version: 1) do
   enable_extension "plpgsql"
 
   create_table "images", force: true do |t|
+
+  create_table "users", force: true do |t|
+    t.string   "organisation"
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
