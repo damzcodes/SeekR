@@ -7,6 +7,8 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, RACK_ENV)
 
+CarrierWave.root = File.join(Padrino.root, "public")
+
 ##
 # ## Enable devel logging
 #
