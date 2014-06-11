@@ -1,5 +1,5 @@
 Given(/^a User "(.*?)" is already registered$/) do |user|
-  user = User.create!(:organisation => "Red Cross", :email => "ngo_user@example.org", :password => "password")
+  @user = User.create!(:organisation => "Red Cross", :email => "ngo_user@example.org", :password => "password")
 end
 
 Given(/^I am on the homepage$/) do
@@ -11,7 +11,6 @@ Given(/^I follow the login link$/) do
 end
 
 When(/^I enter my email as "(.*?)"$/) do |email|
-	save_and_open_page
   fill_in 'Email', :with => email
 end
 
