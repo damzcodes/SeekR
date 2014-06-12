@@ -1,8 +1,14 @@
 <h3>Search Results...</h3>
 
-We think you might look like the following people...
+<%= image_tag @person.images.first.image.url %>
 
-<% @results.each do |user_id, data| %>
-  <img src=<%= data["url"] %> />
-  (<%= data["confidence"] %> % sure)
+<% if @result.code == 200 %>
+  We think you might look like the following people...
+
+  <% @result.body.each do |user_id, data| %>
+    <img src=<%= data["url"] %> />
+    (<%= data["confidence"] %> % sure)
+  <% end %>
+<% else %>
+  No matches found sorry
 <% end %>
