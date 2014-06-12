@@ -1,0 +1,7 @@
+<h3>Missing Person</h3>
+
+<% @person.images.each do |image| %>
+  <%= image_tag(image.image.url) %>
+<% end %>
+
+<%= link_to "Detect Similar", url_for(:missing_person, :detect, :id => @person.id) %>

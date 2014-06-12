@@ -17,4 +17,16 @@ SeekR::App.controllers :missing_person do
     end
   end
 
+  get :show, :with => :id, :map => '/missing_person' do
+    @person = MissingPerson.find(params[:id])
+    render :"missing_person/show"
+  end
+
+  get :detect, :with => :id do
+    @person = MissingPerson.find(params[:id])
+    HTTParty.post("http://localhost:9292/photos/#{@person.id}/detect", :query => {
+      :urls => @person.images.map {|i| "http://#{request.host_with_port}#{i.image.url}"}
+    })
+  end
+
 end
