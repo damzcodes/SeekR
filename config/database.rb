@@ -11,7 +11,7 @@ ActiveRecord::Base.configurations[:development] = {
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter   => 'postgresql',
+  :adapter   => 'mysql2',
   :database  => 'seek_r_production',
   :username  => creds[:username],
   :password  => creds[:password],

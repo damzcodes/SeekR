@@ -71,6 +71,7 @@ GEM
     multi_test (0.1.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.3.16)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     padrino (0.12.1)
@@ -159,6 +160,7 @@ DEPENDENCIES
   launchy
   mini_magick
   mocha
+  mysql2
   padrino (= 0.12.1)
   pg
   pry

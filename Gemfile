@@ -7,6 +7,7 @@ gem 'padrino', '0.12.1'
 gem 'carrierwave', :require => %w(carrierwave carrierwave/orm/activerecord)
 gem 'mini_magick'
 gem 'httmultiparty'
+gem 'mysql2'
 
 group :development, :test do
 	gem 'pry'
