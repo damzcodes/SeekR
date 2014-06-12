@@ -1,0 +1,10 @@
+<h2>List Of All Missing People</h2>
+
+<% @all_missing_people.each do |person| %>
+  <%= link_to image_tag(person.image_url), url_for(:missing_person, :show, :id => person.id) %>
+  <p>
+    <%= person.first_name %>
+    <%= person.last_name %>
+  </p>
+  <p>Last seen: <%= person.last_seen %></p>
+<% end %>
