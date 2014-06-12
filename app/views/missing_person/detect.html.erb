@@ -2,8 +2,7 @@
 
 We think you might look like the following people...
 
-<% @results.each do |r| %>
-  <% result = r[r.keys.first] %>
-  <img src=<%= result["url"] %> />
-  (<%= result["confidence"] %> % sure)
+<% @results.each do |user_id, data| %>
+  <img src=<%= data["url"] %> />
+  (<%= data["confidence"] %> % sure)
 <% end %>
