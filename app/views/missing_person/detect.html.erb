@@ -1,13 +1,13 @@
 <h3>Search Results...</h3>
 
-<%= image_tag @person.images.first.image.url %>
+<%= image_tag @person.images.first.image.profile.url %>
 
 <% unless @result.empty? %>
   We think you might look like the following people...
 
   <% @result.each do |user_id, data| %>
     <img src=<%= data["url"] %> />
-    (<%= data["confidence"] %> % sure)
+    <span class="percent-match" style="font-size:2em;font-weight:bold">(<%= data["confidence"] %> % sure)</span>
   <% end %>
 <% else %>
   No matches found sorry
