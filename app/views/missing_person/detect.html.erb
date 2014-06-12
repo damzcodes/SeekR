@@ -1,0 +1,11 @@
+<h3>Search Results...</h3>
+
+We think you might look like the following people...
+
+<% @results.each do |user_id, confidence| %>
+  <% @person = MissingPerson.find(user_id) %>
+  <% @person.images.each do |i| %>
+    <%= image_tag i.image.url %>
+  <% end %>
+  (<%= confidence %> % sure)
+<% end %>

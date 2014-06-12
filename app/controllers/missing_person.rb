@@ -24,16 +24,18 @@ SeekR::App.controllers :missing_person do
 
   get :detect, :with => :id do
     @person = MissingPerson.find(params[:id])
-    HTTParty.post("http://localhost:9292/photos/#{@person.id}/detect", :query => {
+    @results = HTTParty.post("http://localhost:9292/photos/#{@person.id}/detect", :query => {
       :urls => @person.images.map do |i|
         # More horrendous hacks...
-        if RACK_ENV = "production"
+        if RACK_ENV == "production"
           "http://#{request.host_with_port}/endsvchack#{i.image.url}"
         else
           "http://#{request.host_with_port}#{i.image.url}"
         end
       end
     })
+
+    render :"missing_person/detect"
   end
 
 end

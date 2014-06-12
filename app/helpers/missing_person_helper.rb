@@ -5,6 +5,8 @@ SeekR::App.helpers do
     # HORRENDOUS HACK... but its 3am and I don't care...
     if RACK_ENV == 'production'
       super "/endsvchack#{file}", opts
+    else
+      super file, opts
     end
   end
 end
