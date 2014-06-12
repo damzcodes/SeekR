@@ -2,10 +2,10 @@
 
 <%= image_tag @person.images.first.image.url %>
 
-<% if @result.code == 200 %>
+<% unless @result.empty? %>
   We think you might look like the following people...
 
-  <% @result.body.each do |user_id, data| %>
+  <% @result.each do |user_id, data| %>
     <img src=<%= data["url"] %> />
     (<%= data["confidence"] %> % sure)
   <% end %>
