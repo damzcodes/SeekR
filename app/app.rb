@@ -5,6 +5,7 @@ module SeekR
     register Padrino::Helpers
 
     enable :sessions
+    layout :main
 
     ##
     # Caching support.
