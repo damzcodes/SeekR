@@ -36,7 +36,12 @@ SeekR::App.controllers :missing_person do
       end
     })
 
-    render :"missing_person/detect"
+    if @result.is_a? String
+      flash[:notice] = "Sorry something went wrong"
+      redirect url_for(:missing_person, :show, params[:id])
+    else
+      render :"missing_person/detect"
+    end
   end
 
 end
