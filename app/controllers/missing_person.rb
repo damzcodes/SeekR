@@ -6,6 +6,11 @@ SeekR::App.controllers :missing_person do
     render :"missing_person/new"
   end
 
+  get :index do
+    @all_missing_people = MissingPerson.all
+    render :"missing_person/index"
+  end
+
   post :create do
     @person = MissingPerson.new(params[:missing_person])
     if @person.save
